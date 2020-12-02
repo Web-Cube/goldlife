@@ -1,0 +1,98 @@
+.lang {
+	position: relative;
+	font-size: 14rem;
+	line-height: 18/14*1;
+	display: inline-flex;
+	&__bg {
+		position: fixed;
+		z-index: 499;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+	}
+	
+	&__head, &__item {
+		display: flex;
+		align-items: center;
+		transition: ease .2s;
+	}
+	
+	&__item {
+		padding: 0 15rem;
+		height: 40rem;
+	}
+	
+	&__head {
+		position: relative;
+		padding-right: 21px;
+		cursor: pointer;
+	}
+	
+	&__label {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	
+	&__arrow {
+		transition: ease .2s;
+		width: 12px;
+		height: 18px;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		margin-top: -8px;
+		transform: rotate(90deg);
+		background: url(/img/arrow.svg) 0 0 no-repeat;
+		background-size: 100% 100%;
+	}
+	
+	&__body {
+		position: absolute;
+		top: 100%;
+		width: calc( 100% + 40rem );
+		left: -15rem;
+		margin-top: 10rem;
+		border-radius: 12rem;
+		background: #fff;
+		box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
+		overflow: hidden;
+		transition: ease .3s;
+		color: $black;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-10rem);
+		z-index: 500;
+	}
+	
+	&__item {
+		cursor: pointer;
+		&.is-active {
+			background: rgba($gray, .07);
+		}
+		&:hover {
+			color: $gold;
+		}
+	}
+	
+	&.is-active {
+		.lang {
+			&__arrow {
+				transform: rotate(-90deg);
+			}
+			&__body {
+				transform: translateY(0);
+				opacity: 1;
+				visibility: visible;
+			}
+			&__bg {
+				display: block;
+			}
+			&__head {
+				z-index: 500;
+			}
+		}
+	}
+}

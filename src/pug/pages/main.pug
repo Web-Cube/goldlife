@@ -1,0 +1,31 @@
+extends ../layouts/base
+
+append vars
+	- title = 'GL';
+
+block content
+	.directions__lines
+	+b.main.flex._vertical
+		+e.lines.is-animate.js-load
+		+e.balls
+			+e.balls-wrap.wrap
+				+e.ball._ball1.is-animate.js-ball.js-load(data-parallax-step="9")
+					img(src="/img/main__ball1.png")
+				+e.ball._ball2.is-animate.js-ball.js-load(data-parallax-step="18")
+					img(src="/img/main__ball2.png")
+				+e.ball._ball3.is-animate.js-ball.js-load(data-parallax-step="16")
+					img(src="/img/main__ball3.png")
+				+e.ball._ball4.is-animate.js-ball.js-load(data-parallax-step="8")
+					img(src="/img/main__ball4.png")
+		+e.wrap.wrap.flex._center._vertical.js-load
+			+e.big-ball.is-animate.js-big-ball.js-load(data-parallax-step="11")
+				img(src="/img/gold-ball.png")
+			+e.title.h1.is-animate.js-load
+				| Ваша возможность 
+				br
+				| получать 
+				br
+				| доход в золоте
+	include ../layouts/offer
+	include ../layouts/about
+	include ../layouts/directions

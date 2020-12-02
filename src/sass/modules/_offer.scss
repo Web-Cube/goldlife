@@ -1,0 +1,179 @@
+.offer {
+	margin-top: 450rem;
+	text-align: center;
+	
+	&__desc {
+		margin-top: 100rem;
+	}
+	
+	&.is-animated {
+		
+		.offer {
+			&__title, &__desc, &__text {
+				transform: translateY(35rem);
+				opacity: 0;
+				transition: ease-in .5s;
+			}
+			
+			&__desc {
+				transition-delay: .25s;
+			}
+			
+			&__column {
+				transform: translateY(50rem);
+				opacity: 0;
+				transition: ease-in .5s;
+				&:nth-child(1) {
+					transition-delay: .5s;
+				}
+				&:nth-child(2) {
+					transition-delay: .75s;
+				}
+				&:nth-child(3) {
+					transition-delay: 1s;
+				}
+			}
+		}
+		
+		&.active {
+			.offer {
+				&__title, &__desc, &__text, &__column {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	&__row {
+		margin-top: 50rem;
+	}
+	
+	&__column {
+		width: 440/1440*100%;
+	}
+	
+	&__item {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		padding-top: 232/440*100%;
+		border-radius: 20rem;
+		transition: ease .4s;
+		background: $gold;
+		color: #fff;
+		
+		&-title {
+			font-size: 23rem;
+			line-height: 28/23*1;
+			font-weight: bold;
+			transition: ease .5s;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			margin-top: -14rem;
+			display: block;
+		}
+		
+		&-ball {
+			width: 210rem;
+			height: 210rem;
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			margin-left: -105rem;
+			transition: ease .5s;
+			border-radius: 100%;
+			overflow: hidden;
+			box-shadow: 0 0 128rem rgba(204, 163, 82, 0.32);
+			visibility: hidden;
+		}
+		
+		&:hover {
+			background: #141414;
+			.offer {
+				&__item {
+					&-title {
+						transform: translateY(-100%);
+					}
+					&-ball {
+						visibility: visible;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
+	}
+	
+	&__text {
+		margin-top: 110rem;
+	}
+	
+	@include max-screen($large_tablet) {
+		&__column {
+			width: 31.7%;
+		}
+		
+		&__desc, &__text {
+			margin-top: 80rem;
+			br {
+				display: none;
+			}
+		}
+		
+		&__item {
+			background: #141414;
+			.offer {
+				&__item {
+					&-title {
+						transform: translateY(-100%);
+					}
+					&-ball {
+						width: 180rem;
+						height: 180rem;
+						margin-left: -90rem;
+						transform: translateY(-50%);
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+	
+	@media (min-width: 581px) and (max-width: 769px) {
+		margin-top: 350rem;
+		
+		&__item {
+			padding-top: 60%;
+			.offer {
+				&__item {
+					&-title {
+						font-size: 15px;
+					}
+					&-ball {
+						width: 160rem;
+						height: 160rem;
+						margin-left: -80rem;
+					}
+				}
+			}
+		}
+	}
+	
+	@include max-screen($large_mobile) {
+		margin-top: 200px;
+		
+		&__desc, &__text {
+			margin-top: 40px;
+		}
+		
+		&__column {
+			width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

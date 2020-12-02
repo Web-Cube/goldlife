@@ -1,0 +1,401 @@
+.about {
+	margin-top: 220rem;
+	text-align: center;
+	overflow: hidden;
+	&__line {
+		height: 1px;
+		width: 80rem;
+		background: #000;
+		margin: 0 auto 35rem auto;
+	}
+	
+	&__desc {
+		margin-top: 40rem;
+	}
+	
+	&__list {
+		margin: 60rem -15rem 0 -15rem;
+	}
+	
+	&__item {
+		padding: 0 15rem;
+		width: 33.33%;
+		&-ball {
+			width: 32rem;
+			height: 32rem;
+			filter: drop-shadow(0px 0px 32rem rgba(204, 163, 82, 0.32));
+			transform: matrix(-1, 0, 0, 1, 0, 0);
+			margin: 0 auto 32rem auto;
+		}
+	}
+	
+	&.is-animated {
+		
+		.about {
+			&__title, &__desc {
+				transform: translateY(35rem);
+				opacity: 0;
+				transition: ease-in .5s;
+			}
+			
+			&__desc {
+				transition-delay: .25s;
+			}
+			
+			&__item {
+				transform: translateY(50rem);
+				opacity: 0;
+				transition: ease-in .5s;
+				&:nth-child(1) {
+					transition-delay: .5s;
+				}
+				&:nth-child(2) {
+					transition-delay: .75s;
+				}
+				&:nth-child(3) {
+					transition-delay: 1s;
+				}
+			}
+		}
+		
+		&.active {
+			.about {
+				&__title, &__desc, &__item {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	&__center {
+		margin-top: 196rem;
+		text-align: left;
+		&-left {
+			width: 664/1440*100%;
+		}
+		&-right {
+			width: 688/1440*100%;
+			margin-right: -26/1440*100%;
+		}
+		
+		&-list {
+			padding-left: 19rem;
+		}
+		
+		&-item {
+			position: relative;
+			padding-left: 50rem;
+			font-size: 23rem;
+			line-height: 32/23*1;
+			&:not(:last-child) {
+				margin-bottom: 49rem;
+			}
+			
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 24rem;
+				height: 32rem;
+				background: url('/img/arrow.svg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		
+		&.is-animated {
+		
+			.about {
+				&__center {
+					&-right {
+						transition: ease .5s;
+						opacity: 0;
+					}
+					
+					&-item {
+						transform: translateX(35rem);
+						opacity: 0;
+						transition: ease-in .5s;
+						&:nth-child(1) {
+							transition-delay: .5s;
+						}
+						&:nth-child(2) {
+							transition-delay: .75s;
+						}
+						&:nth-child(3) {
+							transition-delay: 1s;
+						}
+					}
+				}
+			}
+
+			&.active {
+				.about {
+					&__center {
+						&-right {
+							opacity: 1;
+						}
+
+						&-item {
+							transform: translateX(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	&__bottom {
+		margin-top: 134rem;
+		text-align: left;
+		&-left {
+			width: 879/1440*100%;
+			margin-left: -381/1440*100%;
+			padding-top: 26rem;
+		}
+		&-right {
+			width: 50%;
+			padding-left: 1px;
+		}
+		
+		&-title {
+			position: relative;
+			margin-bottom: 42rem;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				right: 100%;
+				top: 50%;
+				width: 80rem;
+				height: 1px;
+				margin-right: 40rem;
+				background: $gold;
+			}
+		}
+		
+		&-content {
+			p {
+				&:not(:last-child) {
+					margin-bottom: 28rem;
+				}
+			}
+		}
+		
+		&.is-animated {
+		
+			.about {
+				&__bottom {
+					&-left {
+						transition: ease .5s;
+						opacity: 0;
+					}
+					
+					&-title {
+						transform: translateX(35rem);
+						opacity: 0;
+						transition: ease-in .5s;
+					}
+					
+					&-content {
+						p {
+							transform: translateX(35rem);
+							opacity: 0;
+							transition: ease-in .4s;
+							&:nth-child(1) {
+								transition-delay: .2s;
+							}
+							&:nth-child(2) {
+								transition-delay: .4s;
+							}
+							&:nth-child(3) {
+								transition-delay: .6s;
+							}
+							&:nth-child(4) {
+								transition-delay: .8s;
+							}
+							&:nth-child(5) {
+								transition-delay: 1s;
+							}
+							&:nth-child(6) {
+								transition-delay: 1.2s;
+							}
+						}
+					}
+				}
+			}
+
+			&.active {
+				.about {
+					&__bottom {
+						&-left {
+							opacity: 1;
+						}
+
+						&-title, &-content p {
+							transform: translateX(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	@include max-screen($large_tablet) {
+		&__item {
+			padding: 0 10rem;
+			br {
+				display: none;
+			}
+		}
+		
+		&__bottom {
+			&-left {
+				margin-left: -20%;
+			}
+		}
+	}
+	
+	@include max-screen($small_tablet) {
+		&__center {
+			&-left {
+				width: 100%;
+				order: 2;
+			}
+			&-list {
+				padding-left: 0;
+			}
+			
+			&-right {
+				margin-right: 0;
+				width: 100%;
+				order: 1;
+				max-width: 580rem;
+				margin: 0 auto 60rem auto;
+			}
+		}
+		
+		&__bottom {
+			margin-top: 100rem;
+			&-left {
+				display: none;
+			}
+			
+			&-right {
+				padding-left: 50rem;
+				width: 100%;
+			}
+			
+			&-title {
+				&:before {
+					display: none;
+				}
+			}
+			&-content {
+				margin-left: -50rem;
+				p {
+					padding-left: 50rem;
+					font-size: 23rem;
+					line-height: 32/23*1;
+					&:not(:last-child) {
+						margin-bottom: 49rem;
+					}
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 24rem;
+						height: 32rem;
+						background: url('/img/arrow.svg') 0 0 no-repeat;
+						background-size: 100% 100%;
+					}
+				}
+			}
+		}
+	}
+	
+	@include max-screen($large_mobile) {
+		
+		margin-top: 140rem;
+		
+		&__title {
+			font-size: 24rem;
+		}
+		
+		&__list {
+			margin-top: 45rem;
+		}
+		
+		&__item {
+			width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 40rem;
+			}
+			
+			&-ball {
+				margin-bottom: 22rem;
+			}
+		}
+		
+		&__center {
+			margin-top: 120rem;
+			&-list {
+				margin-left: -6rem;
+			}
+			&-item {
+				padding-left: 32rem;
+				font-size: 14px;
+				line-height: (21/14) * 1;
+				&:before {
+					width: 20rem;
+					height: 26rem;
+					top: -1px;
+				}
+				&:not(:last-child) {
+					margin-bottom: 28rem;
+				}
+			}
+			&-right {
+				margin-bottom: 30px;
+			}
+		}
+		
+		&__bottom {
+			margin-top: 80rem;
+			&-right {
+				padding-left: 0;
+			}
+			
+			&-title {
+				padding-left: 26rem;
+				margin-bottom: 30px;
+			}
+			
+			&-content {
+				margin-left: 0;
+				p {
+					padding-left: 32rem;
+					font-size: 14px;
+					line-height: (21/14) * 1;
+					&:before {
+						width: 20rem;
+						height: 26rem;
+						top: -1px;
+					}
+					&:not(:last-child) {
+						margin-bottom: 28rem;
+					}
+				}
+			}
+		}
+		
+	}
+}

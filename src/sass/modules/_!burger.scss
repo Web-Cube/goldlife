@@ -1,0 +1,58 @@
+.burger {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	&__text {
+		margin-right: 10px;
+		font-size: 13px;
+		&:before {
+			content: attr(data-show);
+		}
+	}
+	&__btn {
+		width: 27px;
+	}
+	&__line {
+		height: 2px;
+		background: $black;
+		transition: ease .25s;
+		&:not(:last-child) {
+			margin-bottom: 6px;
+		}
+	}
+	
+	&.is-active {
+		.burger {
+			&__text {
+				margin-right: 12px;
+				&:before {
+					content: attr(data-hide);
+				}
+			}
+			&__btn {
+				width: 24px;
+				transform: translateY(2px) translateX(1px);
+			}
+			&__line {
+				&:last-child {
+					display: none;
+				}
+				&:first-child {
+					transform: rotate(45deg) translateY(6px);
+				}
+				&:nth-child(2) {
+					transform: rotate(-45deg) translateY(-5px);
+				}
+			}
+		}
+	}
+	
+	@include max-screen(359px) {
+		&__btn {
+			width: 25px;
+		}
+		&__text {
+			margin-right: 8px;
+		}
+	}
+}

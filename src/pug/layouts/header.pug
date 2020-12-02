@@ -1,0 +1,54 @@
++b.HEADER.header
+	+e.wrap
+		+e.row.flex._justify._vertical
+			+e.A.logo.mobile-visible(href="#")
+				+e.IMG.logo-img(src="/app/img/logo.svg")
+				+e.logo-text GOLDING LIFE
+			+e.column._left.mobile-hidden.is-animate.js-load
+				+e.lang.js-select.lang__
+					+e.bg.js-select-toggle
+					+e.head.js-select-toggle
+						+e.label.js-select-label Русский
+						+e.arrow
+					+e.body.js-select-body
+						+e.list
+							+e.A.item(href="/main.html") Español
+							+e.A.item(href="/main.html") English
+							+e.A.item.is-active(href="/main.html") Русский
+			+e.column._center.is-animate.js-load.js-mobile-menu
+				+e.nav-wrap
+					+e.UL.nav
+						+e.LI.item
+							+e.A.link.js-scroll-to(href="#offers") Предложения
+						+e.LI.item
+							+e.A.link.js-scroll-to(href="#about") О компании
+						+e.LI.item.mobile-hidden
+							+e.A.logo(href="#")
+								+e.IMG.logo-img(src="/app/img/logo.svg")
+								+e.logo-text GOLDING LIFE
+						+e.LI.item
+							+e.A.link.js-scroll-to(href="#directions") Направления
+						+e.LI.item
+							+e.A.link.js-scroll-to(href="#contacts") Контакты
+				+e.contact.mobile-visible
+					+e.lang-wrap.flex._center
+						+e.lang.js-select.lang__
+							+e.bg.js-select-toggle
+							+e.head.js-select-toggle
+								+e.label.js-select-label Русский
+								+e.arrow
+							+e.body.js-select-body
+								+e.list
+									+e.A.item(href="/main.html") Español
+									+e.A.item(href="/main.html") English
+									+e.A.item.is-active(href="/main.html") Русский
+					+e.A.phone(href="tel:+442038158017") +44 2038 15 80 17
+			+e.column._right.mobile-hidden.flex._right.is-animate.js-load
+				+e.A.phone(href="tel:+442038158017") +44 2038 15 80 17
+			+e.burger.burger__.mobile-visible.js-modal-btn(data-modal-name=".js-mobile-menu")
+				+e.text(data-show="MENU", data-hide="CLOSE")
+				+e.btn
+					+e.line
+					+e.line
+					+e.line
+		

@@ -1,0 +1,90 @@
+.footer {
+	padding: 138rem 0 341rem 0;
+	background: #F5F5F5 url(/img/footer__bg.png) bottom no-repeat;
+	background-size: auto 296rem;
+	position: relative;
+	z-index: 100;
+	
+	&__item {
+		padding-left: 57rem;
+		position: relative;
+		&:not(:last-child) {
+			margin-bottom: 28rem;
+		}
+		
+		&_arrow {
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: -2rem;
+				width: 24rem;
+				height: 32rem;
+				background: url('/img/arrow.svg') 0 0 no-repeat;
+				background-size: 100% 100%;
+			}
+		}
+		
+		&_right {
+			text-align: right;
+		}
+	}
+	
+	&__list {
+		margin-left: -57rem;
+	}
+	
+	&__link {
+		color: $gold;
+	}
+	
+	&__column {
+		width: 33.33%;
+	}
+	
+	@include max-screen($small_tablet) {
+		padding-top: 100rem;
+		padding-bottom: 200rem;
+		background-size: auto 200rem!important;
+		&__list {
+			margin-left: -8rem;
+		}
+		&__item {
+			padding-left: 50rem;
+			br {
+				display: none;
+			}
+			&_right {
+				text-align: left;
+			}
+			&:not(:last-child) {
+				margin-bottom: 20rem;
+			}
+		}
+		&__column {
+			width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 20rem;
+			}
+		}
+	}
+	
+	@include max-screen($large_mobile) {
+		padding-top: 80rem;
+		padding-bottom: 150rem;
+		background-size: auto 120px!important;
+		&__item {
+			padding-left: 32rem;
+			&-text {
+				font-size: 14px;
+				line-height: (21/14) * 1;
+			}
+			&:before {
+				width: 20rem;
+				height: 26rem;
+				top: -1px;
+			}
+		}
+	}
+}
