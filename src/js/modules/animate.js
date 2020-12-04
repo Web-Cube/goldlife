@@ -128,11 +128,7 @@ var animate = {
 
 					$('html').removeClass('js-lock');
 
-					$('.js-ball').addClass('is-parallax js-parallax');
-
-					if ( $(window).innerWidth() < 581 ) {
-						$('.js-big-ball').addClass('is-parallax js-parallax');
-					}
+					$('.js-ball').addClass('is-parallax js-parallax-scroll');
 
 
 				}, 3010);
@@ -149,6 +145,22 @@ var animate = {
 			});
 			
 		}
+		
+		function parallaxScroll() {
+			$('.js-parallax-scroll').each(function(){
+				
+				var top = $(window).scrollTop();
+				var step = $(this).data("parallax-step");
+				step = step * 0.1;
+
+				$(this).attr("style", "transform: translateY(" + ( -top * step ) + "px");
+				
+			});
+		}
+
+		$(window).scroll(function() {
+			parallaxScroll();
+		});
 
 	}
 }

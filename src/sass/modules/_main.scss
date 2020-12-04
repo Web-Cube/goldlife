@@ -9,6 +9,15 @@
 		min-height: 100vh;
 	}
 	
+	&__balls {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
 	&__ball {
 		position: absolute;
 		pointer-events: none;
@@ -67,7 +76,7 @@
 		}
 		
 		&.is-parallax {
-			transition: ease-in-out .6s;
+			transition: ease .5s;
 		}
 	}
 	
@@ -103,12 +112,6 @@
 	}
 	
 	&__balls {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 150vh;
-		overflow: hidden;
 		&-wrap {
 			height: 150vh;
 		}
@@ -202,6 +205,10 @@
 			bottom: -120rem;
 			margin-left: -120rem;
 			transition: ease .6s;
+		}
+		
+		&__balls {
+			position: absolute;
 		}
 		
 		&__lines {
